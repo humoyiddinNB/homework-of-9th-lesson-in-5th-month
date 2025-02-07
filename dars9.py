@@ -60,3 +60,6 @@ def alter_table(table_name, column_name, yangi_tip):
 ####4 -masala
 cur.close()
 conn.close()
+kdfoersdjfghd
+kasdjbs
+sdjfksjdf
