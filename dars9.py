@@ -58,8 +58,42 @@ def alter_table(table_name, column_name, yangi_tip):
 
 
 ####4 -masala
+def alter_table_name():
+    table = input("Table nomini kiriting: ")
+    column  = input("Ozgarsidgan column nomini litiring: ")
+    nom  = input("Yangi nomini kiriting: ")
+    try:
+        cur.execute(f"alter table {table} rename column {column} to {nom}")
+        conn.commit()
+    except Exception as e:
+        print("nimadir xato ketti" + str(e))
+
+    else:
+        print(f"{column} columni {nom} ga o'zgartirildi")
+
+# alter_table_name()
+
+
+
+
+
+
+
+####  5-masala
+def printing_chippes():
+    table = input("Table name: ")
+    try:
+        with open("chippest_cars.txt", "w") as chippes:
+            cur.execute(f"select * from {table} order by price limit 10")
+            for i in cur.fetchall():
+                chippes.write(str(i) + "\n")
+    except Exception as e:
+        print("Nimadir hato ketti")
+    else:
+        print("Eng arzon 10 ta moshinalar qoshildi")
+
+# printing_chippes()
+
 cur.close()
 conn.close()
-kdfoersdjfghd
-kasdjbs
-sdjfksjdf
+
